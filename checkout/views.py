@@ -6,7 +6,7 @@ from django.contrib import messages
 from .forms import OrderForm
 
 
-def chekout( request):
+def checkout( request):
     bag = request.session.get('bag', {})
     if not bag:
         messages.error(request, "There's nothing in your bag at the moment")
