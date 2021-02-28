@@ -181,7 +181,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 #AWS Bucket file
-if 'USE_AWS' in environ:
+if 'USE_AWS' in os.environ:
     AWS_STORAGE_BUCKET_NAME = 'boutiqueadoandrew'
     AWS_S3_REGION_NAME = 'EU (Ireland) eu-west-1'
     AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
@@ -198,8 +198,8 @@ MEDIAFILES_LOCATION = 'media'
 
 #overide static  and media URLs in production
 
-STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}'
-MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}'
+STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
 
 
 
